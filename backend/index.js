@@ -14,7 +14,7 @@ dotenv.config();
 app.use(express.json());
 app.use(
   cors({
-    origin: "*",
+    origin: process.env.FRONTEND_URL,
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     credentials: true,
   })
@@ -32,6 +32,3 @@ server.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
 });
 
-app.listen(PORT, () => {
-  console.log(`listening on port ${PORT}`);
-});
